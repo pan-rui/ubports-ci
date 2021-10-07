@@ -29,9 +29,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Cleanup /home
-      uses: pmatos/action-home-clean@v2
-      
+    - name: Set Swap Space
+      uses: pierotofy/set-swap-space@master
+      with:
+          swap-size-gb: 1
+    
     - name: Cleanup Disk
       uses: curoky/cleanup-disk-action@v2.0
       with:
