@@ -1,4 +1,4 @@
-# UBports GH Actionss
+# UBports GH Actions
 This repository enables images to be built from GitHub Actions.
 
 ![](https://github.com/ubuntu-touch-clover/ubports-ci/workflows/Build%20System%20Image/badge.svg)
