@@ -8,7 +8,7 @@ bash hybris-patches/apply-patches.sh --mb
 export USE_CCACHE=1
 breakfast $DEVICE
 make -j$(nproc) mkbootimg
-make -j$(nproc) fec
+#make -j$(nproc) fec
 make -j$(nproc) halium-boot
 make -j$(nproc) systemimage 
 
