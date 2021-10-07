@@ -25,18 +25,13 @@ jobs:
       DEVICE: clover
       ANDROID_ROOT: /home/runner/work/halium/
 
-    steps:
-    - name: Maximize build space
-      uses: easimon/maximize-build-space@master
-      with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          
-          
+    steps:        
     - name: Checkout
       uses: actions/checkout@master
 
+    - name: Cleanup /home
+      uses: pmatos/action-home-clean@v2
+      
     - name: Cleanup Disk
       uses: curoky/cleanup-disk-action@v2.0
       with:
