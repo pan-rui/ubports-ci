@@ -85,8 +85,8 @@ jobs:
         name: halium-boot image
         path: /home/runner/work/halium/out/target/product/clover/halium-boot.img
 
-    - name : Upload system image
-      uses: actions/upload-artifact@master
-      with:
-        name: System image
-        path: /home/runner/work/halium/out/target/product/clover/system.img
+#    - name : Upload system image
+#      uses: actions/upload-artifact@master
+#      with:
+#        name: System image
+#        path: /home/runner/work/halium/out/target/product/clover/system.img
