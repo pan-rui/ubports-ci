@@ -29,14 +29,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Set Swap Space
-      uses: pierotofy/set-swap-space@master
-      with:
-          swap-size-gb: 1
-    
     - name: Cleanup Disk
       uses: HandsomeYingyan/cleanup-disk-action@v3.0
-    
+
+    - name: Maximize build space
+      uses: easimon/maximize-build-space@master
+      with:
+         root-reserve-mb: 512
+         swap-size-mb: 1024
+         build-mount-path: '/home/runner/work/halium/'
+
     - name: Initialization environment
       run: |
         sudo apt-get update
@@ -83,8 +85,15 @@ jobs:
         name: halium-boot image
         path: /home/runner/work/halium/out/target/product/clover/halium-boot.img
 
-#    - name : Upload system image
-#      uses: actions/upload-artifact@master
-#      with:
-#        name: System image
-#        path: /home/runner/work/halium/out/target/product/clover/system.img
+    - name : Upload system image
+      uses: actions/upload-artifact@master
+      with:
+        name: System image
+        path: /home/runner/work/halium/out/target/product/clover/system.img
+
+
+    - name : Upload vendor image
+      uses: actions/upload-artifact@master
+      with:
+        name: Vendor image
+        path: /home/runner/work/halium/out/target/product/clover/vendor.img
