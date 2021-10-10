@@ -37,7 +37,7 @@ jobs:
       with:
          root-reserve-mb: 512
          swap-size-mb: 1024
-         build-mount-path: '/home/runner/work/halium/'
+         build-mount-path: '/home/runner/work/'
 
     - name: Initialization environment
       run: |
