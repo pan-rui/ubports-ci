@@ -35,7 +35,7 @@ jobs:
           swap-size-gb: 1
     
     - name: Cleanup Disk
-      uses: HandsomeYingyan/cleanup-disk-action@v2.0
+      uses: HandsomeYingyan/cleanup-disk-action@v3.0
     
     - name: Initialization environment
       run: |
