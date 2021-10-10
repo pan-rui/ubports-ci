@@ -32,13 +32,6 @@ jobs:
     - name: Cleanup Disk
       uses: HandsomeYingyan/cleanup-disk-action@v3.0
 
-    - name: Maximize build space
-      uses: easimon/maximize-build-space@master
-      with:
-         root-reserve-mb: 512
-         swap-size-mb: 1024
-         build-mount-path: '/home/runner/work/'
-
     - name: Initialization environment
       run: |
         sudo apt-get update
@@ -61,11 +54,18 @@ jobs:
         chmod +x ~/bin/repo
         git config --global user.name "UBports Xiaomi Pad 4 CI"
         git config --global user.email "thisemaildoesnotexist@exist.com"
+        mkdir -p $ANDROID_ROOT
+        
+    - name: Maximize build space
+      uses: easimon/maximize-build-space@master
+      with:
+         root-reserve-mb: 512
+         swap-size-mb: 1024
+         build-mount-path: '$ANDROID_ROOT'
 
     - name: Downloading source code
       run: |
         source halium.env
-        mkdir -p $ANDROID_ROOT
         cd $ANDROID_ROOT
         repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1
         mkdir -p $ANDROID_ROOT/.repo/local_manifests
