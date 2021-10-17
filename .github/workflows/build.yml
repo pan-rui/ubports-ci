@@ -2,7 +2,7 @@
 # Description: Build ubports using GitHub Actions
 # Lisence: MIT
 # Contributor: 0312birdzhang
-# Maintainer: Danct12
+# Maintainer: HandsomeYingyan
 # Credit: https://github.com/P3TERX/Actions-OpenWrt
 #=================================================
 
@@ -85,15 +85,15 @@ jobs:
         name: halium-boot image
         path: /home/runner/work/halium/out/target/product/clover/halium-boot.img
 
-#     - name : Upload system image
-#       uses: actions/upload-artifact@master
-#       with:
-#         name: System image
-#         path: /home/runner/work/halium/out/target/product/clover/system.img
+     - name : Upload system image
+       uses: actions/upload-artifact@master
+       with:
+         name: System image
+         path: /home/runner/work/halium/out/target/product/clover/system.img
 
 
-#     - name : Upload vendor image
-#       uses: actions/upload-artifact@master
-#       with:
-#         name: Vendor image
-#         path: /home/runner/work/halium/out/target/product/clover/vendor.img
+     - name : Upload vendor image
+       uses: actions/upload-artifact@master
+       with:
+         name: Vendor image
+         path: /home/runner/work/halium/out/target/product/clover/vendor.img
