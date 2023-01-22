@@ -22,7 +22,7 @@ jobs:
     env:
       VENDOR: Note10
       DEVICE: d2q
-      ANDROID_ROOT: /home/runner/work/halium/
+      ANDROID_ROOT: /home/runner/work/pan-rui/
 
     steps:        
     - name: Checkout
@@ -82,17 +82,17 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: halium-boot image
-        path: /home/runner/work/halium/out/target/product/d2q/halium-boot.img
+        path: /home/runner/work/pan-rui/out/target/product/d2q/halium-boot.img
 
     - name : Upload system image
       uses: actions/upload-artifact@master
       with:
          name: System image
-         path: /home/runner/work/halium/out/target/product/d2q/system.img
+         path: /home/runner/work/pan-rui/out/target/product/d2q/system.img
 
 
     - name : Upload vendor image
       uses: actions/upload-artifact@master
       with:
          name: Vendor image
-         path: /home/runner/work/halium/out/target/product/d2q/vendor.img
+         path: /home/runner/work/pan-rui/out/target/product/d2q/vendor.img
