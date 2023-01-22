@@ -9,9 +9,9 @@
 name: Build Halium Image
 
 on: 
-  push:
-    branches:
-      - master
+#  push:
+#    branches:
+#      - master
   release:
     types: [published]
 
